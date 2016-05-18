@@ -12,13 +12,16 @@
 </h:head>
 <h:body>
 	<!-- <%@include file="errors_section.jsp" %>  -->
-	<form method="POST" action="<c:url value="/subscription"/>">
-		<label>Email</label> <input name="email" value="<c:out value="${param.email}"/>"><br>
+	<!-- <h:form method="POST" action="<c:url value="/subscription"/>"> -->
+	<h:form acceptcharset="UTF-8" >
+		<label>Email</label> <input name="email" value="<c:out value="#{param.email}"/>"><br>
 		<label>Mot de passe</label> <input name="password" type="password"><br>
 		<label>Confirmez votre mot de passe</label> <input name="passwordConfirmation" type="password"><br>
-		<label>Site Web</label> <input name="website" value="<c:out value="${param.website}"/>"><br>
+		<label>Site Web</label> <input name="website" value="<c:out value="#{param.website}"/>"><br>
 		<input type="checkbox" name="accepted" value="true">&nbsp;J'ai lu et approuvé les conditions générales de ce site<br>
 		<button type="submit">Adhérer</button>
+		<h:commandButton action="<c:url value="/subscription"/>" 
+                     value="Adhérer" />
 	</form>
 </h:body>
 </html>
